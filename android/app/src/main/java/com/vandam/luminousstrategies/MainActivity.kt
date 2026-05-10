@@ -1,4 +1,4 @@
-package com.vandam.appname
+package com.vandam.luminousstrategies
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

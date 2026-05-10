@@ -1,4 +1,4 @@
-package com.vandam.appname
+package com.vandam.luminousstrategies
 import com.facebook.react.common.assets.ReactFontManager
 
 import android.app.Application

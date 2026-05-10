@@ -11,7 +11,7 @@ export function FlippableCard() {
   const obliqueStrategies = [
     "(Organic) machinery",
     "A line has two sides",
-    "A very small object         Its center",
+    "A very small object\n\nIts center",
     "Abandon desire",
     "Abandon normal instructions",
     "Abandon normal instruments",
@@ -181,6 +181,7 @@ export function FlippableCard() {
     "You don't have to be ashamed of using your own ideas",
     "[blank white card]",
   ];
+
   const [randomIndex, setRandomIndex] = useState(
     Math.round(Math.random() * (obliqueStrategies.length - 1)),
   );
@@ -278,7 +279,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: n(400),
     height: n(300),
-    borderRadius: n(50),
+    borderRadius: n(25),
     borderWidth: 1,
     backfaceVisibility: "hidden",
     borderColor: "#FFF",
