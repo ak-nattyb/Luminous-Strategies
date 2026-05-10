@@ -16,7 +16,7 @@ export default function SelectOptionScreen() {
       <StyledButton
         onPress={() =>
           router.push({
-            pathname: "/add-new",
+            pathname: "/settings",
           })
         }
         text="Settings"
