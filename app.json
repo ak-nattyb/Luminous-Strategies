@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "appname",
-    "slug": "appname",
+    "name": "Luminous Strategies",
+    "slug": "luminous-strategies",
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "appname",
+    "scheme": "luminous-strategies",
     "icon": "./assets/images/icon.png",
     "android": {
       "backgroundColor": "#000000",
-      "package": "com.vandam.appname"
+      "package": "com.vandam.luminous-strategies"
     },
     "plugins": [
       "expo-router",
