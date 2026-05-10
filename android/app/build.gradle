@@ -87,9 +87,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.vandam.luminousstrategies'
+    namespace 'com.akimbo.LS'
     defaultConfig {
-        applicationId 'com.vandam.luminousstrategies'
+        applicationId 'com.akimbo.LS'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

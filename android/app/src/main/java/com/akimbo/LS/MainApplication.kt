@@ -1,4 +1,4 @@
-package com.vandam.luminousstrategies
+package com.akimbo.LS
 import com.facebook.react.common.assets.ReactFontManager
 
 import android.app.Application
