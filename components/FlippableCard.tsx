@@ -4,6 +4,7 @@ import { StyledText } from "./StyledText";
 import { useRef, useState } from "react";
 import { HapticPressable } from "./HapticPressable";
 import { router } from "expo-router";
+import { navigate } from "expo-router/build/global-state/routing";
 
 export function FlippableCard() {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -218,7 +219,7 @@ export function FlippableCard() {
   }
 
   function navigateToAddPage() {
-    router.navigate();
+    router.navigate("./add-new");
   }
 
   const frontRotate = flipAnim.interpolate({
@@ -244,7 +245,7 @@ export function FlippableCard() {
 
   return (
     <View style={styles.container}>
-      <HapticPressable onPress={flipCard} onLongPress={flipCard}>
+      <HapticPressable onPress={flipCard} onLongPress={navigateToAddPage}>
         {/* Front */}
         <Animated.View
           style={[

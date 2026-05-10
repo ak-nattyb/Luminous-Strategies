@@ -62,7 +62,7 @@ export default function ContentContainer({
   contentGap = 47,
 }: ContentContainerProps) {
   const segments = useSegments();
-  const hasNavbar = segments?.[0] === "(tabs)";
+  const hasNavbar = false; //hard coded for LS
   const { invertColors } = useInvertColors();
   const {
     handleScroll,
