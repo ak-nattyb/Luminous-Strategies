@@ -1,8 +1,26 @@
-import { router, useFocusEffect } from "expo-router";
-import { useCallback, useState } from "react";
+import { router } from "expo-router";
 import ContentContainer from "@/components/ContentContainer";
-import { TextInput } from "@/components/TextInput";
+import { StyledButton } from "@/components/StyledButton";
 
 export default function SelectOptionScreen() {
-  return <ContentContainer headerTitle="Options"></ContentContainer>;
+  return (
+    <ContentContainer headerTitle="Options">
+      <StyledButton
+        onPress={() =>
+          router.push({
+            pathname: "/add-new",
+          })
+        }
+        text="Add New Card"
+      />
+      <StyledButton
+        onPress={() =>
+          router.push({
+            pathname: "/add-new",
+          })
+        }
+        text="Settings"
+      />
+    </ContentContainer>
+  );
 }
