@@ -4,7 +4,7 @@ import { StyledButton } from "@/components/StyledButton";
 
 export default function SelectOptionScreen() {
   return (
-    <ContentContainer headerTitle="Options">
+    <ContentContainer headerTitle="Options" contentGap={20}>
       <StyledButton
         onPress={() =>
           router.push({
