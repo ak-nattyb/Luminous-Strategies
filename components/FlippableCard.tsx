@@ -3,6 +3,7 @@ import { n } from "@/utils/scaling";
 import { StyledText } from "./StyledText";
 import { useRef, useState } from "react";
 import { HapticPressable } from "./HapticPressable";
+import { router } from "expo-router";
 
 export function FlippableCard() {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -216,6 +217,10 @@ export function FlippableCard() {
     setIsFlipped(!isFlipped);
   }
 
+  function navigateToAddPage() {
+    router.navigate();
+  }
+
   const frontRotate = flipAnim.interpolate({
     inputRange: [0, 1],
     outputRange: ["0deg", "180deg"],
@@ -239,7 +244,7 @@ export function FlippableCard() {
 
   return (
     <View style={styles.container}>
-      <HapticPressable onPress={flipCard}>
+      <HapticPressable onPress={flipCard} onLongPress={flipCard}>
         {/* Front */}
         <Animated.View
           style={[
