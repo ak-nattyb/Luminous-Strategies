@@ -9,7 +9,7 @@ interface CardContentContextType {
 const CardContentContext = createContext<CardContentContextType>({
   cardContent: [
     "(Organic) machinery",
-    "A line has two sides",
+    /*"A line has two sides",
     "A very small object\n\nIts center",
     "Abandon desire",
     "Abandon normal instructions",
@@ -178,7 +178,7 @@ const CardContentContext = createContext<CardContentContextType>({
     "You are an engineer",
     "You can only make one dot at a time",
     "You don't have to be ashamed of using your own ideas",
-    "[blank white card]",
+    "[blank white card]",*/
   ],
   setCardContent: () => {
     throw new Error("useInvertColors must be used within InvertColorsProvider");
@@ -190,7 +190,7 @@ export const useCardContent = () => useContext(CardContentContext);
 export const CardContentProvider = ({ children }: { children: ReactNode }) => {
   const [cardContent, setCardContent] = usePersistedState("cardContent", [
     "(Organic) machinery",
-    "A line has two sides",
+    /*"A line has two sides",
     "A very small object\n\nIts center",
     "Abandon desire",
     "Abandon normal instructions",
@@ -359,7 +359,7 @@ export const CardContentProvider = ({ children }: { children: ReactNode }) => {
     "You are an engineer",
     "You can only make one dot at a time",
     "You don't have to be ashamed of using your own ideas",
-    "[blank white card]",
+    "[blank white card]",*/
   ]);
 
   return (
