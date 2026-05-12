@@ -3,7 +3,6 @@ import ContentContainer from "@/components/ContentContainer";
 import { useInvertColors } from "@/contexts/InvertColorsContext";
 
 export default function SettingsScreen() {
-  const { invertColors, setInvertColors } = useInvertColors();
   const version = nativeApplicationVersion;
 
   return (

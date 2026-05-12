@@ -1,10 +1,9 @@
-import { createContext, type ReactNode, useContext, useEffect } from "react";
+import { createContext, type ReactNode, useContext } from "react";
 import { usePersistedState } from "@/hooks/usePersistedState";
 
 interface CardContentContextType {
   cardContent: string[];
   setCardContent: (value: string[]) => Promise<void>;
-  addToCardContent: (value: string) => Promise<void>;
 }
 
 const CardContentContext = createContext<CardContentContextType>({
@@ -182,9 +181,6 @@ const CardContentContext = createContext<CardContentContextType>({
     "[blank white card]",
   ],
   setCardContent: () => {
-    throw new Error("useInvertColors must be used within InvertColorsProvider");
-  },
-  addToCardContent: () => {
     throw new Error("useInvertColors must be used within InvertColorsProvider");
   },
 });
