@@ -75,7 +75,7 @@ export function FlippableCard() {
   return (
     <View style={styles.container}>
       <HapticPressable onPress={flipCard} onLongPress={navigateToAddPage}>
-        {/* Front */}
+        {/*TitleCard*/}
         <Animated.View
           style={[
             styles.card,
@@ -86,7 +86,20 @@ export function FlippableCard() {
           <StyledText style={styles.titleText}>Luminous Strategies</StyledText>
         </Animated.View>
 
-        {/* Back */}
+        {/*Random Card*/}
+        <Animated.View
+          style={[
+            styles.card,
+            styles.cardBack,
+            { opacity: backOpacity, transform: [{ rotateY: backRotate }] },
+          ]}
+        >
+          <StyledText style={styles.text}>
+            {cardContent[randomIndex]}
+          </StyledText>
+        </Animated.View>
+
+        {/*Random Card*/}
         <Animated.View
           style={[
             styles.card,
@@ -119,11 +132,11 @@ const styles = StyleSheet.create({
     backfaceVisibility: "hidden",
     borderColor: "#FFF",
   },
-  cardBack: {
-    backgroundColor: "#000",
-  },
   cardFront: {
     backgroundColor: "#FFF",
+  },
+  cardBack: {
+    backgroundColor: "#000",
     position: "absolute",
     top: 0,
     left: 0,
