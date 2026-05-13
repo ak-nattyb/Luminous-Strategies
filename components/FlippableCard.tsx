@@ -34,7 +34,7 @@ export function FlippableCard() {
   }
 
   function flipCard() {
-    if (isFlipped) {
+    if (!isFlipped) {
       refreshCard();
     }
 
@@ -124,6 +124,9 @@ const styles = StyleSheet.create({
   },
   cardFront: {
     backgroundColor: "#FFF",
+    position: "absolute",
+    top: 0,
+    left: 0,
   },
   text: {
     textAlign: "center",
