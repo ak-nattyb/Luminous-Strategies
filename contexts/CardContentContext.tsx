@@ -181,7 +181,6 @@ interface CardContentContextType {
   resetCardContent: () => void;
   addCardContent: (value: string) => number;
   removeCardContent: (value: string) => void;
-  getRandomCardContent: () => string;
 }
 
 const CardContentContext = createContext<CardContentContextType>({
@@ -196,9 +195,6 @@ const CardContentContext = createContext<CardContentContextType>({
     throw new Error("setCardContent must be used within CardContentProvider");
   },
   removeCardContent: () => {
-    throw new Error("setCardContent must be used within CardContentProvider");
-  },
-  getRandomCardContent: () => {
     throw new Error("setCardContent must be used within CardContentProvider");
   },
 });
@@ -237,10 +233,6 @@ export const CardContentProvider = ({ children }: { children: ReactNode }) => {
     setCardContent(localCopy);
   };
 
-  const getRandomCardContent = () => {
-    return cardContent[Math.floor(Math.random() * cardContent.length)];
-  };
-
   return (
     <CardContentContext.Provider
       value={{
@@ -249,7 +241,6 @@ export const CardContentProvider = ({ children }: { children: ReactNode }) => {
         resetCardContent,
         addCardContent,
         removeCardContent,
-        getRandomCardContent,
       }}
     >
       {children}
