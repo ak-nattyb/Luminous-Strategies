@@ -5,6 +5,7 @@ import {
   InvertColorsProvider,
   useInvertColors,
 } from "@/contexts/InvertColorsContext";
+import { CardContentProvider } from "@/contexts/CardContentContext";
 
 function RootLayout() {
   const { invertColors } = useInvertColors();
@@ -26,8 +27,10 @@ export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <InvertColorsProvider>
-        <StatusBar hidden />
-        <RootLayout />
+        <CardContentProvider>
+          <StatusBar hidden />
+          <RootLayout />
+        </CardContentProvider>
       </InvertColorsProvider>
     </GestureHandlerRootView>
   );

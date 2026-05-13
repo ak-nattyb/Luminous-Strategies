@@ -2,9 +2,11 @@ import { router, useFocusEffect } from "expo-router";
 import { useCallback, useState } from "react";
 import ContentContainer from "@/components/ContentContainer";
 import { TextInput } from "@/components/TextInput";
+import { useCardContent } from "@/contexts/CardContentContext";
 
 export default function AddNewScreen() {
   const [itemName, setItemName] = useState("");
+  const { addCardContent } = useCardContent(); //import card list and the ability to change context from here
 
   useFocusEffect(
     useCallback(() => {
@@ -13,6 +15,7 @@ export default function AddNewScreen() {
   );
 
   const handleSubmit = () => {
+    addCardContent(itemName);
     router.dismissTo("/");
   };
 
