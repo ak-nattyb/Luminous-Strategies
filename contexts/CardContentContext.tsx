@@ -178,6 +178,10 @@ const DEFAULT_VALUES = [
 interface CardContentContextType {
   cardContent: string[];
   setCardContent: (value: string[]) => Promise<void>;
+  resetCardContent: () => void;
+  addCardContent: (value: string) => number;
+  removeCardContent: (value: string) => void;
+  getRandomCardContent: () => string;
 }
 
 const CardContentContext = createContext<CardContentContextType>({
@@ -185,18 +189,69 @@ const CardContentContext = createContext<CardContentContextType>({
   setCardContent: () => {
     throw new Error("setCardContent must be used within CardContentProvider");
   },
+  resetCardContent: () => {
+    throw new Error("setCardContent must be used within CardContentProvider");
+  },
+  addCardContent: () => {
+    throw new Error("setCardContent must be used within CardContentProvider");
+  },
+  removeCardContent: () => {
+    throw new Error("setCardContent must be used within CardContentProvider");
+  },
+  getRandomCardContent: () => {
+    throw new Error("setCardContent must be used within CardContentProvider");
+  },
 });
 
 export const useCardContent = () => useContext(CardContentContext);
 
 export const CardContentProvider = ({ children }: { children: ReactNode }) => {
+  //create our persistant state that will maintain our list, start with default values
   const [cardContent, setCardContent] = usePersistedState(
     "cardContent",
     DEFAULT_VALUES,
   );
 
+  //reset to default cardContentValues
+  const resetCardContent = () => {
+    setCardContent(DEFAULT_VALUES);
+  };
+
+  //method to add cardContent
+  const addCardContent = (newCardContent: string) => {
+    setCardContent(cardContent.concat(newCardContent));
+    //return just the index so that we display it correctly
+    return cardContent.length - 1;
+  };
+
+  //method to remove cardContent
+  const removeCardContent = (cardContentToRemove: string) => {
+    let localCopy = [];
+
+    for (let i = 0; i < cardContent.length; i++) {
+      if (cardContent[i] !== cardContentToRemove) {
+        localCopy.push(cardContent[i]);
+      }
+    }
+
+    setCardContent(localCopy);
+  };
+
+  const getRandomCardContent = () => {
+    return cardContent[Math.floor(Math.random() * cardContent.length)];
+  };
+
   return (
-    <CardContentContext.Provider value={{ cardContent, setCardContent }}>
+    <CardContentContext.Provider
+      value={{
+        cardContent,
+        setCardContent,
+        resetCardContent,
+        addCardContent,
+        removeCardContent,
+        getRandomCardContent,
+      }}
+    >
       {children}
     </CardContentContext.Provider>
   );
