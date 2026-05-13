@@ -22,12 +22,12 @@ export function FlippableCard() {
     const previousIndex = randomIndex;
 
     //create new var
-    let newIndex = Math.round(Math.random() * (cardContent.length - 1));
+    let newIndex = Math.floor(Math.random() * (cardContent.length - 1));
 
     //check for non-identical value
     if (cardContent.length > 1) {
       while (newIndex == previousIndex) {
-        newIndex = Math.random() * (cardContent.length - 1);
+        newIndex = Math.floor(Math.random() * (cardContent.length - 1));
       }
     }
     setRandomIndex(newIndex);
@@ -83,9 +83,7 @@ export function FlippableCard() {
             { opacity: frontOpacity, transform: [{ rotateY: frontRotate }] },
           ]}
         >
-          <StyledText style={styles.text}>
-            {cardContent[randomIndex]}
-          </StyledText>
+          <StyledText style={styles.titleText}>Luminous Strategies</StyledText>
         </Animated.View>
 
         {/* Back */}
@@ -96,7 +94,9 @@ export function FlippableCard() {
             { opacity: backOpacity, transform: [{ rotateY: backRotate }] },
           ]}
         >
-          <StyledText style={styles.titleText}>Luminous Strategies</StyledText>
+          <StyledText style={styles.text}>
+            {cardContent[randomIndex]}
+          </StyledText>
         </Animated.View>
       </HapticPressable>
     </View>
@@ -119,14 +119,11 @@ const styles = StyleSheet.create({
     backfaceVisibility: "hidden",
     borderColor: "#FFF",
   },
-  cardFront: {
+  cardBack: {
     backgroundColor: "#000",
   },
-  cardBack: {
+  cardFront: {
     backgroundColor: "#FFF",
-    position: "absolute",
-    top: 0,
-    left: 0,
   },
   text: {
     textAlign: "center",
