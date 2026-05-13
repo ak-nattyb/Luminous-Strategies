@@ -181,7 +181,7 @@ const CardContentContext = createContext<CardContentContextType>({
     "[blank white card]",*/
   ],
   setCardContent: () => {
-    throw new Error("useInvertColors must be used within InvertColorsProvider");
+    throw new Error("setCardContent must be used within CardContentProvider");
   },
 });
 

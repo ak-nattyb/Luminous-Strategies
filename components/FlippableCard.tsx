@@ -14,7 +14,7 @@ export function FlippableCard() {
   const flipAnim = useRef(new Animated.Value(0)).current;
 
   const [randomIndex, setRandomIndex] = useState(
-    Math.round(Math.random() * (cardContent.length - 1)),
+    Math.floor(Math.random() * (cardContent.length - 1)),
   );
 
   function refreshCard() {
