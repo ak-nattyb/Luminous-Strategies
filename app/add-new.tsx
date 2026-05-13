@@ -6,7 +6,7 @@ import { useCardContent } from "@/contexts/CardContentContext";
 
 export default function AddNewScreen() {
   const [itemName, setItemName] = useState("");
-  const { cardContent, setCardContent } = useCardContent(); //import card list and the ability to change context from here
+  const { addCardContent } = useCardContent(); //import card list and the ability to change context from here
 
   useFocusEffect(
     useCallback(() => {
@@ -15,7 +15,7 @@ export default function AddNewScreen() {
   );
 
   const handleSubmit = () => {
-    setCardContent(cardContent.concat([itemName]));
+    addCardContent(itemName);
     router.dismissTo("/");
   };
 
