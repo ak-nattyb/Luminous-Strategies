@@ -1,30 +1,29 @@
-<img src="assets/images/example.png" alt="Example Template Screenshots">
+<img src="assets/images/example.png" alt="Checklist Screenshots">
 
-<p>A minimal Expo template to create a LightOS-inspired app.</p>
+<p>An app that lets you choose a card from Brian Eno's Oblique Strategies to inspire your creatvity.</p>
 
-> [!NOTE]
-> This is very much a WIP. There's a lot of things I want to add but it'll take me a bit of time :)
+![GitHub License](https://img.shields.io/github/license/ak-nattyb/Checklist)
+![GitHub Release](https://img.shields.io/github/v/release/ak-nattyb/Checklist)
 
-## Quick Start
+## Installation
 
-1. Update `app.json` with your app name, slug, and package name
-2. Run `bun dev`
+The latest .apk file is available in [releases](https://github.com/ak-nattyb/Luminous-Strategies/releases/latest).
 
-## Commands
+I recommend using [Obtainium](https://github.com/ImranR98/Obtainium) and adding the repository's URL to receive updates.
 
-```bash
-bun dev  # Build and run
-bun run sync-version   # Sync version across files
-bun run generate-icon  # Generate icon from app name
-bun run generate-readme-image  # Generate README example image
-```
+## Features
 
-## GitHub Releases
+- Press on a card to flip it over
+- Long press on a card to add a new card, reset cards to stock and access settings
 
-Trigger the workflow manually in Actions tab. It builds an APK and creates a GitHub release tagged with the version from `app.json`. Changelog is auto-generated from commits since the last release.
+## Acknowledgements
 
-Requires `EXPO_TOKEN` secret in repo settings.
+Huge thank you to the following projects:
 
-## Detailed Docs
+- Vandam's Light Template: [light-template](https://github.com/vandamd/light-template)
 
-See [AGENTS.md](./AGENTS.md) for complete component reference, patterns, and examples.
+## Support
+
+Send me (rustybeets) a message on the Light Phone discord if you run into any issues!
+
+If you find this app useful and want more apps like it to exist, [consider sponsoring Vadam](https://github.com/sponsors/vandamd)! :)
