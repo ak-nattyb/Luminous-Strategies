@@ -3,15 +3,19 @@ import { n } from "@/utils/scaling";
 import { StyledText } from "./StyledText";
 import { useRef, useState } from "react";
 import { HapticPressable } from "./HapticPressable";
-import { router } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { useCardContent } from "@/contexts/CardContentContext";
 
 export function FlippableCard() {
   const { cardContent } = useCardContent(); //import card list and the ability to change context from here
-
-  const [isFlipped, setIsFlipped] = useState(false);
-
   const flipAnim = useRef(new Animated.Value(0)).current;
+
+  const params = useLocalSearchParams<{
+    customCard: string;
+    setFlip: string;
+  }>();
+
+  const [isFlipped, setIsFlipped] = useState(params.setFlip === "true");
 
   const [randomIndex, setRandomIndex] = useState(
     Math.floor(Math.random() * (cardContent.length - 1)),
@@ -95,7 +99,7 @@ export function FlippableCard() {
           ]}
         >
           <StyledText style={styles.text}>
-            {cardContent[randomIndex]}
+            {params.customCard ?? cardContent[randomIndex]}
           </StyledText>
         </Animated.View>
 

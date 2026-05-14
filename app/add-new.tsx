@@ -16,7 +16,13 @@ export default function AddNewScreen() {
 
   const handleSubmit = () => {
     addCardContent(itemName);
-    router.dismissTo("/");
+    router.push({
+      pathname: "/",
+      params: {
+        customCard: itemName,
+        setFlip: "true",
+      },
+    });
   };
 
   return (

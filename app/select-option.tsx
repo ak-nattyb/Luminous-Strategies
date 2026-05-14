@@ -1,11 +1,8 @@
 import { router } from "expo-router";
 import ContentContainer from "@/components/ContentContainer";
 import { StyledButton } from "@/components/StyledButton";
-import { useCardContent } from "@/contexts/CardContentContext";
 
 export default function SelectOptionScreen() {
-  const { resetCardContent } = useCardContent(); //import card list and the ability to change context from here
-
   return (
     <ContentContainer headerTitle="Options" contentGap={20}>
       <StyledButton
@@ -16,7 +13,22 @@ export default function SelectOptionScreen() {
         }
         text="Add New Card"
       />
-      <StyledButton onPress={resetCardContent} text="Reset Cards" />
+      <StyledButton
+        onPress={() =>
+          router.push({
+            pathname: "/confirm",
+            params: {
+              title: "Reset Cards",
+              message:
+                "Are you sure you want to delete all of your custom cards?",
+              confirmText: "YES",
+              action: "string",
+              returnPath: "/",
+            },
+          })
+        }
+        text="Reset Cards"
+      />
       <StyledButton
         onPress={() =>
           router.push({
