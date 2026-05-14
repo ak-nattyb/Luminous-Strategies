@@ -21,6 +21,7 @@ I recommend using [Obtainium](https://github.com/ImranR98/Obtainium) and adding 
 Huge thank you to the following projects:
 
 - Vandam's Light Template: [light-template](https://github.com/vandamd/light-template)
+- Ceejbot's strategies.txt: [oblique-strategies](https://github.com/ceejbot/oblique-strategies/blob/master/strategies.txt)
 
 ## Support
 
